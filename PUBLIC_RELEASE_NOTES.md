@@ -12,7 +12,7 @@ reference:
 
 The source was read through a local Git object store. No source workspace,
 branch, ref, or Git history was modified. This public release is maintained in
-the GitHub repository listed above.
+`yunny22/kookmin-sim-to-real`.
 
 ## Source Differences
 
@@ -122,4 +122,4 @@ weights, data, and hardware configuration.
    dependencies, then run the simulation and real-handoff launch paths with
    sanitized local artifacts.
 4. Review whether the post-July 24 RL variants should be kept, split, or
-   further reduced before public publication.
+   further reduced in a future release.
