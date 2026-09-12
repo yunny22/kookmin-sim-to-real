@@ -4,7 +4,7 @@ This repository is provided for portfolio and research demonstration purposes.
 No separate open-source reuse license is granted; third-party dependencies keep
 their own terms.
 
-This is a cleaned public staging release of a Team KAI research project for the
+This is a cleaned public release of a Team KAI research project for the
 Kookmin University autonomous-driving competition final. It explores whether a
 Gazebo-based learning pipeline can improve the high-speed control-stability
 limits observed after the preliminary Imitation Learning project. It contains
@@ -202,7 +202,7 @@ release.
 
 - Competition research project: Team KAI
 - Cross-check history remote: [`yunny22/kookmin_sim_to_real`](https://github.com/yunny22/kookmin_sim_to_real)
-- Public staging source: `origin/simulation` at `7b9016d`
+- Public source revision: `origin/simulation` at `7b9016d`
 - Overall provenance: co-developed / team project; see
   [`PUBLIC_RELEASE_NOTES.md`](PUBLIC_RELEASE_NOTES.md)
 
