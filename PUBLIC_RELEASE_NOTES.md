@@ -77,16 +77,20 @@ runtime inputs.
 
 ## Provenance
 
-- `il_data_tools`: PERSONAL authorship evidence in the selected history,
-  pending model/data publication-right confirmation
-- `xycar_rl`: PERSONAL authorship evidence in the selected history, but
-  project integration and result claims remain TEAM
-- `xycar_perception`: CO-DEVELOPED; the selected history includes more than
-  one contributor
-- overall project: CO-DEVELOPED / TEAM
+- Project ownership: individual research project by Taeyun Kim.
+- Competition context: Team KAI / Kookmin University autonomous-driving
+  competition final.
+- Public release organization: Taeyun Kim.
 
-Commit attribution alone does not establish publication rights for all modules,
-models, datasets, calibration, or competition outcomes.
+Within this released research scope, Taeyun Kim designed and implemented the
+canonical perception and preprocessing pipeline, Behavioral Cloning and
+offline TD3+BC workflow, Gazebo closed-loop environment and evaluation,
+real-vehicle delay/vehicle-behavior measurement, simulation calibration,
+Sim-to-Real transfer experiments, and result/limitation analysis.
+
+This provenance statement does not reclassify third-party dependencies or
+excluded artifacts as Taeyun Kim's work. Model, dataset, calibration, and
+competition-media publication rights remain separate considerations.
 
 ## Validation
 

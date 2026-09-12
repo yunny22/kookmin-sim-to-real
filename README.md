@@ -4,12 +4,13 @@ This repository is provided for portfolio and research demonstration purposes.
 No separate open-source reuse license is granted; third-party dependencies keep
 their own terms.
 
-This is a cleaned public release of a Team KAI research project for the
-Kookmin University autonomous-driving competition final. It explores whether a
-Gazebo-based learning pipeline can improve the high-speed control-stability
-limits observed after the preliminary Imitation Learning project. It contains
-source code only: trained weights, datasets, raw vehicle captures, and private
-calibration records are deliberately excluded.
+This is a cleaned public release of Taeyun Kim's individual Sim-to-Real
+research track, developed in the Team KAI context of the Kookmin University
+autonomous-driving competition final. It explores whether a Gazebo-based
+learning pipeline can improve the high-speed control-stability limits observed
+after the preliminary Imitation Learning project. It contains source code only:
+trained weights, datasets, raw vehicle captures, and private calibration
+records are deliberately excluded.
 
 ## Overview
 
@@ -93,13 +94,19 @@ included here. Low-speed real-vehicle application was checked, but at higher
 speed the remaining gap from friction, tire-road interaction, and vehicle
 behavior could not be reproduced closely enough for stable deployment.
 
-## My Contribution
+## Individual Project
 
-This was a co-developed competition research project. The portfolio record
-covers canonical data/policy pipeline work, BC and TD3+BC experimentation,
-Gazebo closed-loop validation, and real-vehicle delay/dynamics calibration
-work. Team-level system results and source ownership are not presented as the
-work of one person.
+This project was independently designed, implemented, and evaluated by Taeyun
+Kim. The research pipeline includes canonical perception and camera
+preprocessing, dataset and transition preparation, Behavioral Cloning, the
+camera-speed policy, offline TD3+BC training, temporal-input experiments,
+Gazebo closed-loop evaluation, real-vehicle sensor/control-delay and vehicle
+behavior measurement, simulation calibration, Sim-to-Real transfer, and
+limitation analysis.
+
+The Kookmin Final competition was a Team KAI activity. This individual research
+track does not claim ownership of the separate team competition system or
+third-party dependencies.
 
 ## Results
 
@@ -144,11 +151,10 @@ launch paths stay recognizable. Models are represented only by explanatory
 
 ## Environment
 
-The source uses ROS 2 Python packages, Gazebo/GZ integration, Python,
-PyTorch, OpenCV, NumPy, YAML, and the Xycar message/bridge packages listed in
-each package manifest. The Gazebo world, vehicle bridge, external lane-model
-runtime, hardware drivers, model weights, datasets, and real-camera
-calibration are not bundled.
+ROS 2 기반 Gazebo 환경에서 개발·검증했다. 실행에는 각 package manifest에
+명시된 Python 및 외부 Xycar message/bridge 의존성이 필요하다. Gazebo world,
+vehicle bridge, 외부 lane-model runtime, hardware driver, model weight,
+dataset, 실차 camera calibration은 이 공개본에 포함하지 않는다.
 
 ## How to Run
 
@@ -198,13 +204,14 @@ python3 -m pytest -q \
 is therefore an integration check rather than a source-only test in this
 release.
 
-## Team / Credits
+## Context / Credits
 
-- Competition research project: Team KAI
+- Individual research project: Taeyun Kim
+- Competition context: Team KAI / Kookmin University autonomous-driving competition
 - Cross-check history remote: [`yunny22/kookmin_sim_to_real`](https://github.com/yunny22/kookmin_sim_to_real)
 - Public source revision: `origin/simulation` at `7b9016d`
-- Overall provenance: co-developed / team project; see
+- Public release organization: Taeyun Kim; see
   [`PUBLIC_RELEASE_NOTES.md`](PUBLIC_RELEASE_NOTES.md)
 
-Team publication consent is confirmed. Models, data, calibration and media are
-excluded from this source-only portfolio release.
+Models, data, calibration and media are excluded from this source-only
+portfolio release.
