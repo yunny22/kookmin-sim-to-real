@@ -110,7 +110,7 @@ weights, data, and hardware configuration.
 
 ## Remaining Issues Before GitHub Publication
 
-1. Confirm contributor credit, team consent, and a project-level public license.
+1. Select a project-level public license for the retained team-authored source.
 2. Review the full source history for previously committed secrets, models,
    datasets, raw calibration, and machine paths.
 3. Confirm rights to every model, dataset derivative, real-vehicle record,
