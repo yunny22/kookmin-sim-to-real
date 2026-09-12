@@ -1,0 +1,42 @@
+track:
+  world_name: kookmin_xycar_track
+  model_name: xycar_ackermann
+  # The CAD dash numbering is opposite to the real Kookmin competition lap.
+  reverse_direction: true
+  # Real tests showed the former +10 cm right reference ran too far right.
+  # This is exactly 10 cm left of that calibration.
+  target_right_offset_m: 0.0
+  off_track_threshold_m: 0.38
+
+environment:
+  control_rate_hz: 10.0
+  physics_step_size_sec: 0.001
+  speed_command: 17.0
+  variable_speed: true
+  min_speed_command: 4.0
+  # Actor output scaling range. This is not an additional runtime speed cap.
+  max_speed_command: 25.0
+  require_lidar: false
+  max_steering_command: 42.0
+  reset_lateral_error_m: 0.22
+  reset_yaw_error_deg: 14.0
+  observation_timeout_sec: 2.0
+  max_episode_sec: 120.0
+
+reward:
+  progress: 8.0
+  cross_track: 1.5
+  heading: 0.8
+  steering_rate: 0.05
+  steering_magnitude: 0.01
+  safe_speed: 6.0
+  unsafe_speed: 0.8
+  curve_overspeed: 1.2
+  time_efficiency: 0.04
+  straight_target_speed_mps: 2.015300
+  curve_target_speed_mps: 1.370404
+  reverse_progress: 4.0
+  collision: 50.0
+  off_track: 30.0
+  stuck: 10.0
+  lap_complete: 20.0

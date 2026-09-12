@@ -1,0 +1,140 @@
+xycar_camera_perception:
+  ros__parameters:
+    use_sim_time: true
+    image_topic: /image_raw
+    use_compressed_image: false
+    road_segments_topic: /perception/road_segments
+    centerline_topic: /perception/centerline
+    objects_topic: /perception/objects
+    traffic_lights_topic: /perception/traffic_lights
+    debug_image_topic: /perception/debug_image
+    debug_markers_topic: /perception/debug_markers
+    canonical_road_topic: /perception/canonical_road_image
+    canonical_white_mask_topic: /perception/canonical_white_mask
+    canonical_yellow_mask_topic: /perception/canonical_yellow_mask
+    canonical_pregeometry_white_mask_topic: /perception/canonical_pregeometry_white_mask
+    canonical_pregeometry_yellow_mask_topic: /perception/canonical_pregeometry_yellow_mask
+    canonical_pretrack_white_mask_topic: /perception/canonical_pretrack_white_mask
+    canonical_pretrack_yellow_mask_topic: /perception/canonical_pretrack_yellow_mask
+    canonical_valid_mask_topic: /perception/canonical_valid_mask
+    canonical_metric_debug_topic: /perception/canonical_metric_debug
+    base_frame_id: base_footprint
+    source_name: xycar_camera_perception
+    # Process every freshest frame; the depth-1 sensor queue prevents stale backlog.
+    publish_rate_limit_hz: 0.0
+    publish_empty_optional_topics: true
+
+    # BEV ROI after the real-car homography-style projection.
+    roi_top_row: 0
+    roi_bottom_row: 219
+    row_step_px: 6
+    image_center_x_px: -1.0
+
+    # Real-car style wide-camera projection path:
+    # raw image -> optional fisheye rectification -> homography BEV.
+    projection_mode: bev_homography
+    horizon_row_px: 236.0
+    vanishing_point_x_px: -1.0
+    ipm_x_scale_m_px: 67.0
+    ipm_y_scale_m_px: 0.18
+    horizon_min_denom_px: 8.0
+    min_projected_x_m: 0.20
+    max_projected_x_m: 5.00
+    calib_yaml: ""
+    # Gazebo already renders the configured camera projection. Applying the
+    # physical fisheye calibration again creates invalid black arcs in the BEV.
+    enable_rectify: false
+    rect_balance: 0.3
+    # Gazebo calibration from the known 0.30m dash / 0.30m gap geometry and
+    # the 0.824m white-center spacing. The source rows represent 1.5m and
+    # 0.5m forward from the simulated camera lens.
+    src_tl_x_ratio: 0.344453
+    src_tr_x_ratio: 0.548906
+    src_bl_x_ratio: -0.005088
+    src_br_x_ratio: 0.659487
+    src_top_y_ratio: 0.517754
+    src_bottom_y_ratio: 0.671241
+    bev_width: 640
+    bev_height: 220
+    # Spawn pose is 0.215m to the right of the yellow centerline. These
+    # columns therefore represent the two physical white-line centers in the
+    # vehicle frame, not symmetric image margins.
+    dst_left_ratio: 0.052143
+    dst_right_ratio: 0.640714
+    dst_top_y_ratio: 0.0
+    dst_bottom_y_ratio: 0.666666667
+    lateral_m_per_px: 0.0021875
+    forward_m_per_px: 0.006818182
+    bev_x_offset_m: 0.0
+    bev_bottom_ignore_px: 0
+    bev_border_gray: 70
+    bev_valid_erode_px: 4
+
+    # Row-linear projection calibration.
+    near_x_m: 0.20
+    far_x_m: 2.20
+    near_m_per_px: 0.0022
+    far_m_per_px: 0.0065
+    lane_width_m: 0.80
+
+    min_cluster_width_px: 3
+    max_cluster_gap_px: 8
+    min_segment_points: 4
+    min_centerline_points: 3
+
+    white_s_max: 80
+    white_v_min: 145
+    yellow_h_min: 15
+    yellow_h_max: 42
+    yellow_s_min: 60
+    yellow_v_min: 110
+    morphology_kernel_px: 3
+    centerline_mode: lane_midline
+    use_yellow_as_centerline: false
+    centerline_polyfit_enabled: true
+    centerline_polyfit_degree: 2
+    centerline_sample_spacing_m: 0.05
+    centerline_temporal_alpha: 0.45
+    centerline_temporal_timeout_sec: 0.50
+
+    # Fixed metric representation shared by simulation and the real vehicle.
+    canonical_width: 256
+    canonical_height: 144
+    canonical_lateral_range_m: 1.4
+    canonical_forward_range_m: 1.5
+    canonical_background_gray: 36
+    canonical_line_width_px: 5
+    canonical_white_s_max: 120
+    canonical_white_v_min: 145
+    canonical_white_v_floor: 70
+    canonical_white_relative_delta: 9.0
+    canonical_min_component_area_px: 8
+    canonical_geometry_redraw_fitted_lines: true
+    canonical_yolo_yellow_geometry_filter_enabled: false
+    canonical_bottom_ignore_m: 0.0
+    # Use the same stateful lane representation in simulation and on-car.
+    canonical_tracking_enabled: true
+    canonical_expected_half_lane_width_m: 0.412
+    canonical_lane_width_tolerance_m: 0.18
+    canonical_min_white_yellow_offset_m: 0.18
+    canonical_tracking_base_gate_m: 0.08
+    canonical_tracking_max_gate_m: 0.25
+    canonical_tracking_continuation_m: 0.38
+    canonical_tracking_curvature_gate_gain: 1.0
+    canonical_tracking_curvature_max_extra_m: 0.10
+    canonical_tracking_confirmation_frames: 1
+    # S-curve entry can briefly fail the pixel/topology gates. Keep the last
+    # accepted curve through a short search window so the model does not see
+    # a one-frame all-background input at the bend entrance.
+    canonical_tracking_coast_sec: 0.25
+    canonical_tracking_search_sec: 0.60
+    canonical_tracking_smoothing_alpha: 1.0
+    canonical_width_prediction_enabled: false
+    canonical_width_prediction_replacement_frames: 1
+    # The simulation track has no checkerboard / stop-line clutter to reject.
+    # Keeping this enabled makes the near-horizontal part of the S curve look
+    # like a transverse bar and blanks every canonical lane for several frames.
+    canonical_transverse_clutter_row_fraction: 0.0
+    canonical_transverse_clutter_min_rows: 6
+    canonical_persistent_prediction_enabled: false
+    canonical_yolo_allow_unpaired_yellow: true

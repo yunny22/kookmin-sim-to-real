@@ -1,0 +1,40 @@
+# ROS 2 build products
+build/
+install/
+log/
+logs/
+
+# Python and editor state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.vscode/
+.idea/
+.env
+
+# Trained models and exported runtimes
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+!models/README.md
+
+# Research data and vehicle recordings
+datasets/
+dataset/
+data/
+recordings/
+*.bag
+*.db3
+*.mcap
+*.npz
+*.npy
+*.csv
+
+# Local calibration and runtime output
+calibration/
+artifacts/
+results/
+*.log
