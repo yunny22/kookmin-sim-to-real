@@ -2,7 +2,7 @@
 
 ## Source Selection
 
-This staging release is extracted from the locally available remote-tracking
+This public release is extracted from the locally available remote-tracking
 reference:
 
 - Repository: `yunny22/kookmin_sim_to_real`
@@ -11,8 +11,8 @@ reference:
 - Commit date/message: 2026-08-05, `Add speed-25 straight RL and continuous curve control`
 
 The source was read through a local Git object store. No source workspace,
-branch, ref, or Git history was modified. This staging directory has no GitHub
-remote and has not been pushed.
+branch, ref, or Git history was modified. This public release is maintained in
+the GitHub repository listed above.
 
 ## Source Differences
 
@@ -94,7 +94,7 @@ competition-media publication rights remain separate considerations.
 
 ## Validation
 
-The staging release was checked without copying models, datasets, calibration,
+The public release was checked without copying models, datasets, calibration,
 worlds, or vehicle records:
 
 - Python syntax, package XML, package structure, packaging entry points, and
@@ -112,7 +112,7 @@ A successful package build does not exercise Gazebo closed-loop driving or real
 vehicle control. Those require external bridge/world assets, reviewed model
 weights, data, and hardware configuration.
 
-## Remaining Issues Before GitHub Publication
+## Release Follow-up
 
 1. Review the full source history for previously committed secrets, models,
    datasets, raw calibration, and machine paths.
@@ -123,4 +123,3 @@ weights, data, and hardware configuration.
    sanitized local artifacts.
 4. Review whether the post-July 24 RL variants should be kept, split, or
    further reduced before public publication.
-6. Create the GitHub repository and push only after these checks are complete.
