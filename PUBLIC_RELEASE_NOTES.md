@@ -110,14 +110,13 @@ weights, data, and hardware configuration.
 
 ## Remaining Issues Before GitHub Publication
 
-1. Select a project-level public license for the retained team-authored source.
-2. Review the full source history for previously committed secrets, models,
+1. Review the full source history for previously committed secrets, models,
    datasets, raw calibration, and machine paths.
-3. Confirm rights to every model, dataset derivative, real-vehicle record,
+2. Confirm rights to every model, dataset derivative, real-vehicle record,
    route/world asset, and competition media item.
-4. Install the exact companion ROS packages, Gazebo world/bridge, and Python
+3. Install the exact companion ROS packages, Gazebo world/bridge, and Python
    dependencies, then run the simulation and real-handoff launch paths with
    sanitized local artifacts.
-5. Review whether the post-July 24 RL variants should be kept, split, or
+4. Review whether the post-July 24 RL variants should be kept, split, or
    further reduced before public publication.
 6. Create the GitHub repository and push only after these checks are complete.

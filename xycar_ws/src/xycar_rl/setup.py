@@ -28,7 +28,7 @@ setup(
     maintainer="Team KAI",
     maintainer_email="maintainers@example.invalid",
     description="Reinforcement-learning environment, training, and deployment for Xycar.",
-    license="Apache-2.0",
+    license="UNLICENSED",
     entry_points={
         "console_scripts": [
             "rl_transition_recorder = xycar_rl.transition_recorder_node:main",

@@ -1,5 +1,9 @@
 # Kookmin Final – Reinforcement Learning & Sim-to-Real
 
+This repository is provided for portfolio and research demonstration purposes.
+No separate open-source reuse license is granted; third-party dependencies keep
+their own terms.
+
 This is a cleaned public staging release of a Team KAI research project for the
 Kookmin University autonomous-driving competition final. It explores whether a
 Gazebo-based learning pipeline can improve the high-speed control-stability
@@ -202,5 +206,5 @@ release.
 - Overall provenance: co-developed / team project; see
   [`PUBLIC_RELEASE_NOTES.md`](PUBLIC_RELEASE_NOTES.md)
 
-Confirm contributor credit, model/data rights, and a project-level release
-license before creating a public GitHub repository.
+Team publication consent is confirmed. Models, data, calibration and media are
+excluded from this source-only portfolio release.

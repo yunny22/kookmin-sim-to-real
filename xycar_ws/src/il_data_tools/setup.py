@@ -23,7 +23,7 @@ setup(
     maintainer="Team KAI",
     maintainer_email="maintainers@example.invalid",
     description="Imitation-learning collection, training, and inference for Xycar ROS2.",
-    license="Apache-2.0",
+    license="UNLICENSED",
     entry_points={
         "console_scripts": [
             "il_common_recorder = il_data_tools.common_recorder_node:main",

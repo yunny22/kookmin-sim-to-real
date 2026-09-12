@@ -34,7 +34,7 @@ setup(
     maintainer="Team KAI",
     maintainer_email="maintainers@example.invalid",
     description="Camera-based Xycar perception publisher compatible with KAIEV perception topics.",
-    license="Apache-2.0",
+    license="UNLICENSED",
     entry_points={
         "console_scripts": [
             "benchmark_yolo_lane = xycar_perception.benchmark_yolo_lane:main",
