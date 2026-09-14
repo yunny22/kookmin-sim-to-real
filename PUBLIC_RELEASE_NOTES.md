@@ -102,7 +102,7 @@ worlds, or vehicle records:
 - `colcon build --packages-select il_data_tools xycar_perception xycar_rl`
   passed for all three packages.
 - Launch-description generation passed for nine core simulation and runtime
-  launches after sourcing ROS 2 and the staged package paths.
+  launches after sourcing ROS 2 and the public package paths.
 - The source-only unit-test subset passed: 87 tests, with one real-camera-profile
   test intentionally deselected. Three further tests require the omitted Gazebo
   world. `test_centerline_fit` additionally requires the external
